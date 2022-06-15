@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>櫻花旅行團</title>
+  <link rel="icon" type="image/x-icon" href="./image/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<nav>
+  <a href="./index.html" class="logo">
+    <img src="./image/sakura.png" height="100%">
+    <span>櫻花旅行團</span>
+  </a>
+  <ul>
+    <li><a href="./taipei.html">台北</a></li>
+    <li><a href="./taichung.html">台中</a></li>
+    <li><a href="./nantou.html">南投</a></li>
+  </ul>
+</nav>
+
+<body>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 4</div>
+      <img src="./image/image1.jpeg" width="100%" height="100%">
+      <div class="text">台中｜武陵農場櫻花季</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 4</div>
+      <img src="./image/image2.jpeg" width="100%" height="100%">
+      <div class="text">台北｜陽明山櫻花季</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img src="./image/image3.jpeg" width="100%" height="100%">
+      <div class="text">南投｜九族文化村櫻花季</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 4</div>
+      <img src="./image/image4.jpeg" width="100%" height="100%">
+      <div class="text">南投｜奧萬大森林遊樂區</div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+  <div class="article">
+    <div class="title">
+      熱門文章
+    </div>
+    <div class="articles">
+      <div class="post">
+        <img src="./image/image1.jpeg" alt="" width="100%" height="100%">
+        台中｜武陵農場櫻花季
+      </div>
+      <div class="post">
+        <img src="./image/image2.jpeg" alt="" width="100%" height="100%">
+        台北｜陽明山櫻花季
+      </div>
+      <div class="post">
+        <img src="./image/image3.jpeg" alt="" width="100%" height="100%">
+        南投｜九族文化村櫻花季
+      </div>
+      <div class="post">
+        <img src="./image/image4.jpeg" alt="" width="100%" height="100%">
+        南投｜奧萬大森林遊樂區
+      </div>
+    </div>
+    <div class="title">
+      精選文章
+    </div>
+    <div class="featured">
+      <div class="featured-img">
+        <h2>台北｜陽明山櫻花季</h2>
+        陽明山上可以賞櫻的地方有很多，包含陽明山國家公園內的蔣公銅像附近、第二停車場水濂洞、遊客中心附近、湖山綠地、櫻花溪流等等，另外陽明山國家公園在春天也有其他各式花卉從春初的杜鵑到四月的海芋季，春天可以說是陽明山最熱鬧的季節了！
+      </div>
+      <div class="featured-text">
+        <img src="./image/image2.jpeg" width="100%">
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  © 2022 櫻花旅行團 - All Rights Reserved.
+</footer>
+
+</html>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>
